@@ -59,7 +59,6 @@ class Ditaa(Directive):
     def run(self):
         if self.arguments:
             print self.arguments
-            document = self.state.document
             if self.content:
                 return [document.reporter.warning(
                     'Ditaa directive cannot have both content and '
