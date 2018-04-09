@@ -26,11 +26,10 @@ except ImportError:
     from sha import sha
 
 from docutils import nodes
-from docutils.parsers.rst import directives
+from docutils.parsers.rst import Directive, directives
 
 from sphinx.errors import SphinxError
 from sphinx.util.osutil import ensuredir, ENOENT, EPIPE
-from sphinx.util.compat import Directive
 
 import sys
 

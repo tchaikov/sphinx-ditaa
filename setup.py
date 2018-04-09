@@ -38,7 +38,7 @@ requires = ['Sphinx>=1.0']
 
 setup(
     name='sphinx-ditaa',
-    version='0.2',
+    version='0.3.dev',
     url='https://github.com/baloo/sphinx-ditaa',
     license='BSD License',
     author='Arthur Gautier',

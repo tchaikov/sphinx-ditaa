@@ -1,0 +1,7 @@
+Release 0.3 (in development)
+============================
+
+Bugs fixed
+----------
+
+* #14: import ``Directive`` directly from ``docutils.parsers.rst``
