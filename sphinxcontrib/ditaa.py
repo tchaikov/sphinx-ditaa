@@ -29,9 +29,12 @@ from docutils import nodes
 from docutils.parsers.rst import Directive, directives
 
 from sphinx.errors import SphinxError
+from sphinx.util.logging import getLogger
 from sphinx.util.osutil import ensuredir, ENOENT, EPIPE
 
 import sys
+
+log = getLogger(__name__)
 
 mapname_re = re.compile(r'<map id="(.*?)"')
 svg_dim_re = re.compile(r'<svg\swidth="(\d+)pt"\sheight="(\d+)pt"', re.M)
@@ -139,9 +142,9 @@ def render_ditaa(self, code, options, prefix='ditaa'):
     except OSError as err:
         if err.errno != ENOENT:   # No such file or directory
             raise
-        self.builder.warn('ditaa command %r cannot be run (needed for ditaa '
-                          'output), check the ditaa setting' %
-                          self.builder.config.ditaa)
+        log.warning('ditaa command %r cannot be run (needed for ditaa '
+                    'output), check the ditaa setting' %
+                    self.builder.config.ditaa)
         self.builder._ditaa_warned_dot = True
         return None, None
     wentWrong = False
